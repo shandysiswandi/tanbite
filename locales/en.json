@@ -1,0 +1,59 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "login": {
+    "title": "Login",
+    "description": "Please sign in and pick up right where your journey paused.",
+    "form_title": "Welcome Back",
+    "email_label": "Email",
+    "password_label": "Password",
+    "submit_idle": "Login",
+    "submit_pending": "Signing in...",
+    "separator": "OR",
+    "google_button": "Continue with Google",
+    "forgot_password": "Forgot Password?",
+    "no_account": "Don't have an account?",
+    "create_account": "Create new account"
+  },
+  "register": {
+    "title": "Register",
+    "description": "Register now to unlock your account and begin building the next chapter of your journey with us",
+    "form_title": "Create your account",
+    "name_label": "Name",
+    "name_placeholder": "John Doe",
+    "email_label": "Email",
+    "email_description": "We'll use this to contact you. We will not share your email with anyone else.",
+    "email_placeholder": "m@example.com",
+    "password_label": "Password",
+    "password_description": "Password should be at least 8 characters including a number and a lowercase letter.",
+    "confirm_password_label": "Confirm password",
+    "submit_idle": "Create account",
+    "submit_pending": "Creating account...",
+    "separator": "OR",
+    "google_button": "Continue with Google",
+    "has_account": "Already have an account?",
+    "sign_in": "Sign in"
+  },
+  "not_found": {
+    "badge": "Error 404",
+    "title": "Page Not Found",
+    "subtitle": "We couldn't find the page you were looking for",
+    "description": "The page you're looking for doesn't exist or may have been moved. Check the URL or return to the homepage to continue browsing.",
+    "back_home": "Back to home"
+  },
+  "error_500": {
+    "badge": "Error 500",
+    "title": "Something went wrong",
+    "subtitle": "We hit an unexpected error while loading this page.",
+    "description": "Try refreshing the page. If the problem continues, you can return to the homepage while we work on a fix.",
+    "back_home": "Back to home"
+  },
+  "quick_links": {
+    "label": "Quick paths",
+    "home_title": "Return to the hub",
+    "home_description": "Back to the landing page overview.",
+    "login_title": "Log in",
+    "login_description": "Jump into your workspace.",
+    "register_title": "Create account",
+    "register_description": "Start building your ritual board."
+  }
+}

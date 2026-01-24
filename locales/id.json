@@ -1,0 +1,59 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "login": {
+    "title": "Login",
+    "description": "Silakan masuk dan lanjutkan perjalanan Anda tepat di tempat Anda berhenti.",
+    "form_title": "Selamat Datang kembali",
+    "email_label": "E-mail",
+    "password_label": "Kata sandi",
+    "submit_idle": "Login",
+    "submit_pending": "Sedang masuk...",
+    "separator": "ATAU",
+    "google_button": "Lanjutkan dengan Google",
+    "forgot_password": "Lupa kata sandi?",
+    "no_account": "Belum punya akun?",
+    "create_account": "Buat akun baru"
+  },
+  "register": {
+    "title": "Daftar",
+    "description": "Buat akun Anda dan mulailah membangun menu Anda berikutnya.",
+    "form_title": "Buat Akun",
+    "name_label": "Nama",
+    "name_placeholder": "John Doe",
+    "email_label": "E-mail",
+    "email_placeholder": "m@example.com",
+    "password_label": "Kata sandi",
+    "confirm_password_label": "Konfirmasi kata sandi",
+    "submit_idle": "Buat akun",
+    "submit_pending": "Membuat akun...",
+    "separator": "ATAU",
+    "google_button": "Lanjutkan dengan Google",
+    "has_account": "Sudah punya akun?",
+    "sign_in": "Masuk",
+    "email_description": "Kami akan menggunakan ini untuk menghubungi Anda. Kami tidak akan membagikan email Anda kepada siapa pun.",
+    "password_description": "Kata sandi minimal harus terdiri dari 8 karakter, termasuk angka dan huruf kecil."
+  },
+  "not_found": {
+    "badge": "Kesalahan 404",
+    "title": "Halaman Tidak Ditemukan",
+    "subtitle": "Kami tidak dapat menemukan halaman yang Anda cari.",
+    "description": "Halaman yang Anda cari tidak ada atau mungkin telah dipindahkan. Periksa URL atau kembali ke halaman beranda untuk melanjutkan penjelajahan.",
+    "back_home": "Kembali ke halaman utama"
+  },
+  "error_500": {
+    "badge": "Kesalahan 500",
+    "title": "Terjadi kesalahan.",
+    "subtitle": "Kami mengalami kesalahan tak terduga saat memuat halaman ini.",
+    "description": "Coba segarkan halaman. Jika masalah berlanjut, Anda dapat kembali ke halaman beranda sementara kami berupaya memperbaikinya.",
+    "back_home": "Kembali ke halaman utama"
+  },
+  "quick_links": {
+    "label": "Jalur cepat",
+    "home_title": "Kembali ke halaman utama",
+    "home_description": "Kembali ke halaman utama.",
+    "login_title": "Masuk",
+    "login_description": "Masuklah ke ruang kerja Anda.",
+    "register_title": "Buat akun",
+    "register_description": "Mulailah membangun papan ritual Anda."
+  }
+}
