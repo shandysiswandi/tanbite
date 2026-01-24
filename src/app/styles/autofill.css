@@ -1,0 +1,54 @@
+@layer base {
+  /* Autofill colors */
+  input:is(
+      :-webkit-autofill,
+      :-webkit-autofill:hover,
+      :-webkit-autofill:focus,
+      :-webkit-autofill:active,
+      :autofill,
+      :autofill:hover,
+      :autofill:focus,
+      :autofill:active
+    ) {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--foreground) !important;
+    background-color: transparent !important;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
+    caret-color: var(--foreground) !important;
+  }
+
+  .dark
+    input:is(
+      :-webkit-autofill,
+      :-webkit-autofill:hover,
+      :-webkit-autofill:focus,
+      :-webkit-autofill:active,
+      :autofill,
+      :autofill:hover,
+      :autofill:focus,
+      :autofill:active
+    ) {
+    -webkit-text-fill-color: var(--foreground) !important;
+    background-color: color-mix(
+      in oklch,
+      var(--input) 30%,
+      transparent
+    ) !important;
+    box-shadow: 0 0 0px 1000px
+      color-mix(in oklch, var(--input) 30%, transparent) inset !important;
+    caret-color: var(--foreground) !important;
+  }
+
+  /* Prevent autofill flash */
+  input {
+    &:-webkit-autofill {
+      transition:
+        background-color 9999s ease-in-out 0s,
+        -webkit-text-fill-color 9999s ease-in-out 0s !important;
+    }
+
+    &:autofill {
+      transition: background-color 9999s ease-in-out 0s !important;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    @apply font-mono;
+  }
+
+  blockquote {
+    @apply font-serif;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    ::view-transition-old(root),
+    ::view-transition-new(root) {
+      animation: none;
+    }
+
+    ::view-transition-old(auth-content),
+    ::view-transition-new(auth-content) {
+      animation-duration: 240ms;
+      animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    ::view-transition-old(console-content),
+    ::view-transition-new(console-content) {
+      animation-duration: 260ms;
+      animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+    }
+
+    ::view-transition-old(auth-content) {
+      animation-name: auth-content-exit;
+    }
+
+    ::view-transition-new(auth-content) {
+      animation-name: auth-content-enter;
+    }
+
+    ::view-transition-old(console-content) {
+      animation-name: console-content-exit;
+    }
+
+    ::view-transition-new(console-content) {
+      animation-name: console-content-enter;
+    }
+  }
+
+  @keyframes auth-content-enter {
+    from {
+      opacity: 0;
+      transform: translateY(10px) scale(0.98);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes auth-content-exit {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(-6px) scale(1.01);
+    }
+  }
+
+  @keyframes console-content-enter {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes console-content-exit {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+  }
+}
