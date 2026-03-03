@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "skills": {
+    "caveman": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "a818cdc41dcfaa50dd891c5cb5e5705968338de02e7e37949ca56e8c30ad4176"
+    },
+    "caveman-commit": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "76994afc39b68f4dbe098df76262b68d9928a23ee0f6aaebb11ba0e0f55bfa13"
+    },
+    "caveman-compress": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "300fb8578258161e1752a2a4142a7e9ff178c960bcb83b84422e2987421f33bf"
+    },
+    "caveman-help": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "3cd5f7d3f88c8ef7b16a6555dc61f5a11b14151386697609ab6887ab8b5f059d"
+    },
+    "caveman-review": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "1dc59e7e896bc9dd449e43116c4c8b2e656b88c3370df91848330c17347af3d0"
+    },
+    "compress": {
+      "source": "JuliusBrussee/caveman",
+      "sourceType": "github",
+      "computedHash": "05c97bc3120108acd0b80bdef7fb4fa7c224ba83c8d384ccbc97f92e8a065918"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "computedHash": "2bc6cf38ec7b4a5778a43fabb3e87642c9897ad45e9eb42438b57fd2def6cca8"
+    },
+    "tanstack-integration-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "computedHash": "f8454d0835f04539c0d90a5a481937bc0e1cd7e31ac8610f302abd3421f3d24a"
+    },
+    "tanstack-query-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "computedHash": "21d2e8b7468a81d772b6527ad8ca178cc2f3f08af777bb9061333013ee88a0c9"
+    },
+    "tanstack-router-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "computedHash": "65764bc7b90e47f6023cb7f89b3af93eaaafc517754f10b9382e184d4646a77d"
+    },
+    "tanstack-start-best-practices": {
+      "source": "deckardger/tanstack-agent-skills",
+      "sourceType": "github",
+      "computedHash": "8b073187405a10f9997158f9139a9664cc801595d2fe63d542a0bac9bf2152f5"
+    }
+  }
+}

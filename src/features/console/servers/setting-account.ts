@@ -5,8 +5,8 @@ import { apiPatch } from "@/libraries/client/api";
 import { API_URL } from "@/libraries/constants/api-url";
 
 interface RequestBody {
-  full_name: string;
   email: string;
+  full_name: string;
 }
 
 export const settingAccountFn = createServerFn({ method: "POST" })

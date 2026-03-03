@@ -1,4 +1,8 @@
-import ky, { type Options } from "ky";
+import ky, {
+  type AfterResponseState,
+  type BeforeRequestState,
+  type Options,
+} from "ky";
 import { getTokensServerFn, setTokensServerFn } from "@/app/servers/cookies";
 import { API_URL } from "@/libraries/constants/api-url";
 import { ApiError } from "./exceptions";
@@ -11,18 +15,18 @@ interface RefreshResponse {
 
 interface TokenBridge {
   accessToken: string;
-  refreshToken: string;
   expiresAt: number;
+  refreshToken: string;
 }
 
 export interface ApiRequestOptions<Body = unknown> {
-  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
-  path: string;
   body?: Body;
-  query?: Record<string, QueryValue>;
   config?: Options;
+  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   needAccessToken?: boolean;
   needAutoRefreshToken?: boolean;
+  path: string;
+  query?: Record<string, QueryValue>;
 }
 
 declare module "ky" {
@@ -58,7 +62,7 @@ async function refreshAccessToken(
   refreshToken: string
 ): Promise<RefreshResponse> {
   const response = await ky.post(API_URL.identity.refresh, {
-    prefixUrl: process.env.API_URL,
+    prefix: process.env.API_URL,
     json: { refresh_token: refreshToken },
     throwHttpErrors: false,
     retry: 0,
@@ -99,7 +103,7 @@ async function refreshAccessToken(
 }
 
 const instance = ky.create({
-  prefixUrl: process.env.API_URL,
+  prefix: process.env.API_URL,
   retry: 0,
   headers: {
     "Content-Type": "application/json",
@@ -107,11 +111,11 @@ const instance = ky.create({
   },
   hooks: {
     beforeRequest: [
-      async (req, options) => {
+      async ({ request, options }: BeforeRequestState) => {
         if (options.context?.needAccessToken === false) {
           return;
         }
-        if (req.headers.has("Authorization")) {
+        if (request.headers.has("Authorization")) {
           return;
         }
 
@@ -123,7 +127,7 @@ const instance = ky.create({
           if (pendingRefresh) {
             try {
               const { access_token } = await pendingRefresh;
-              req.headers.set("Authorization", `Bearer ${access_token}`);
+              request.headers.set("Authorization", `Bearer ${access_token}`);
               return;
             } catch {
               // ignore refresh errors and fall through to cookie lookup
@@ -132,7 +136,7 @@ const instance = ky.create({
 
           const tokenBridge = getRefreshTokenBridge(refreshToken);
           if (tokenBridge) {
-            req.headers.set(
+            request.headers.set(
               "Authorization",
               `Bearer ${tokenBridge.accessToken}`
             );
@@ -141,12 +145,12 @@ const instance = ky.create({
         }
 
         if (accessToken) {
-          req.headers.set("Authorization", `Bearer ${accessToken}`);
+          request.headers.set("Authorization", `Bearer ${accessToken}`);
         }
       },
     ],
     afterResponse: [
-      async (request, options, response) => {
+      async ({ request, options, response }: AfterResponseState) => {
         if (
           response.status === 401 &&
           options.context?.needAutoRefreshToken !== false &&

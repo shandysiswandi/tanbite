@@ -18,9 +18,9 @@ interface ResponseBody {
 }
 
 interface RequestBody {
+  challenge_token: string;
   code: string;
   method: string;
-  challenge_token: string;
 }
 
 export const twoFactorFn = createServerFn({ method: "POST" })

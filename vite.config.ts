@@ -1,12 +1,12 @@
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
+import babel from "@rolldown/plugin-babel";
 import tailwindcss from "@tailwindcss/vite";
 import { devtools } from "@tanstack/devtools-vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
-import viteReact from "@vitejs/plugin-react";
+import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { nitro } from "nitro/vite";
 import { defineConfig } from "vite";
-import viteTsConfigPaths from "vite-tsconfig-paths";
-import { localizeHref } from "./src/libraries/paraglide/runtime";
+import { localizeHref } from "./src/libraries/paraglide/runtime.js";
 
 const prerenderRoutes = [
   "/",
@@ -22,6 +22,9 @@ const prerenderRoutes = [
 }));
 
 export default defineConfig({
+  resolve: {
+    tsconfigPaths: true,
+  },
   server: {
     watch: {
       ignored: ["**/src/paraglide/**"],
@@ -52,7 +55,6 @@ export default defineConfig({
         brotli: true,
       },
     }),
-    viteTsConfigPaths(), // this is the plugin that enables path aliases
     tanstackStart({
       pages: prerenderRoutes,
       prerender: {
@@ -71,10 +73,22 @@ export default defineConfig({
         entry: "app/server.ts",
       },
     }),
-    viteReact({
-      babel: {
-        plugins: ["babel-plugin-react-compiler"],
-      },
+    viteReact(),
+    babel({
+      presets: [reactCompilerPreset()],
+      plugins: undefined,
+      assumptions: undefined,
+      auxiliaryCommentAfter: undefined,
+      auxiliaryCommentBefore: undefined,
+      comments: undefined,
+      compact: undefined,
+      cwd: undefined,
+      generatorOpts: undefined,
+      parserOpts: undefined,
+      retainLines: undefined,
+      shouldPrintComment: undefined,
+      targets: "defaults",
+      wrapPluginVisitorMethod: undefined,
     }),
     tailwindcss(),
   ],

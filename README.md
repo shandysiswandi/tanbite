@@ -5,11 +5,6 @@ This is a template for a new TanStack Start project with React, TypeScript, and 
 
 ## Issues
 
-- recharts
-  - Current: 2.15.4
-  - Latest: 3.7.0
-  - Issue: https://github.com/shadcn-ui/ui/issues/7669
-
 - @tanstack/react-table
   - Current: 8.21.3
   - Issue: https://github.com/TanStack/table/issues/6137

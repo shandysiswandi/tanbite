@@ -2,9 +2,9 @@ import type { LucideIcon } from "lucide-react";
 import type { FileRouteTypes } from "@/app/route-tree.gen";
 
 interface NavBase {
-  title: string;
   icon?: LucideIcon;
   permission?: string;
+  title: string;
 }
 
 export type NavItemLink = NavBase & {
@@ -21,8 +21,8 @@ export type NavItemGroup = NavBase & {
 export type NavItem = NavItemLink | NavItemGroup;
 
 export interface NavData {
-  navOverview: NavItem[];
   navFeatures: NavItem[];
   navManagements: NavItem[];
+  navOverview: NavItem[];
   userSettings: NavItem[];
 }

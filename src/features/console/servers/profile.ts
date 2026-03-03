@@ -4,10 +4,10 @@ import { apiGet } from "@/libraries/client/api";
 import { API_URL } from "@/libraries/constants/api-url";
 
 interface Profile {
-  id: string;
+  avatar_url: string;
   email: string;
   full_name: string;
-  avatar_url: string;
+  id: string;
   status: string;
 }
 interface Permission {

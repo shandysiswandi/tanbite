@@ -9,7 +9,7 @@ export const loginSchema = z.object({
 export type LoginInput = z.infer<typeof loginSchema>;
 
 export interface LoginOutput {
-  mfaRequired?: boolean;
-  challengeToken?: string;
   availableMethods?: string[];
+  challengeToken?: string;
+  mfaRequired?: boolean;
 }
