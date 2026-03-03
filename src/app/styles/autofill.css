@@ -10,11 +10,11 @@
       :autofill:focus,
       :autofill:active
     ) {
-    -webkit-background-clip: text;
     -webkit-text-fill-color: var(--foreground) !important;
-    background-color: transparent !important;
-    box-shadow: 0 0 0px 1000px transparent inset !important;
     caret-color: var(--foreground) !important;
+    background-color: transparent !important;
+    -webkit-background-clip: text;
+    box-shadow: 0 0 0px 1000px transparent inset !important;
   }
 
   .dark
@@ -29,6 +29,7 @@
       :autofill:active
     ) {
     -webkit-text-fill-color: var(--foreground) !important;
+    caret-color: var(--foreground) !important;
     background-color: color-mix(
       in oklch,
       var(--input) 30%,
@@ -36,7 +37,6 @@
     ) !important;
     box-shadow: 0 0 0px 1000px
       color-mix(in oklch, var(--input) 30%, transparent) inset !important;
-    caret-color: var(--foreground) !important;
   }
 
   /* Prevent autofill flash */

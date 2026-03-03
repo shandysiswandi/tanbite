@@ -56,9 +56,9 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 interface RevenueChartDataPoint {
+  customers: number;
   date: string;
   revenue: number;
-  customers: number;
 }
 
 const chartData: RevenueChartDataPoint[] = [

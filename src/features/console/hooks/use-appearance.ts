@@ -61,8 +61,8 @@ export function isThemePreset(value: string): value is ThemePreset {
 interface AppearanceContextValue {
   density: Density;
   setDensity: (density: Density) => void;
-  themePreset: ThemePreset;
   setThemePreset: (themePreset: ThemePreset) => void;
+  themePreset: ThemePreset;
 }
 
 export const AppearanceContext = createContext<AppearanceContextValue | null>(

@@ -1,4 +1,4 @@
-.PHONY: help install run build preview lint format translate doctor clean test docker-build docker-run
+.PHONY: help install run build preview format translate doctor clean test docker-build docker-run
 PORT ?= 4333
 PM ?= pnpm
 RUN = $(PM) run
@@ -28,9 +28,6 @@ run: ## Start Vite dev server.
 
 build: ## Build for production.
 	@$(RUN) build
-
-lint: ## Run linter.
-	@$(RUN) lint
 
 format: ## Run formatter.
 	@$(RUN) format

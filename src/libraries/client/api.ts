@@ -11,18 +11,18 @@ interface RefreshResponse {
 
 interface TokenBridge {
   accessToken: string;
-  refreshToken: string;
   expiresAt: number;
+  refreshToken: string;
 }
 
 export interface ApiRequestOptions<Body = unknown> {
-  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
-  path: string;
   body?: Body;
-  query?: Record<string, QueryValue>;
   config?: Options;
+  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   needAccessToken?: boolean;
   needAutoRefreshToken?: boolean;
+  path: string;
+  query?: Record<string, QueryValue>;
 }
 
 declare module "ky" {
