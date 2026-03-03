@@ -1,9 +1,9 @@
 import type { ReactNode } from "react";
 
 interface PageBaseProps {
-  title: string;
-  subtitle: string;
   children: ReactNode;
+  subtitle: string;
+  title: string;
 }
 
 export function PageBase({ title, subtitle, children }: PageBaseProps) {

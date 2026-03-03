@@ -2,9 +2,9 @@ import type { ComponentProps, ReactNode } from "react";
 import { FieldGroup } from "@/components/ui/field";
 
 interface FormLayoutProps extends Omit<ComponentProps<"form">, "noValidate"> {
-  title: string;
-  subtitle: string;
   children: ReactNode;
+  subtitle: string;
+  title: string;
 }
 
 export function FormLayout({
