@@ -5,10 +5,10 @@ import { apiPost } from "@/libraries/client/api";
 import { API_URL } from "@/libraries/constants/api-url";
 
 interface RequestBody {
-  email: string;
-  password: string;
   captcha: string;
+  email: string;
   full_name: string;
+  password: string;
 }
 
 export const registerFn = createServerFn({ method: "POST" })

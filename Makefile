@@ -1,4 +1,4 @@
-.PHONY: help install run build preview lint format translate doctor clean test docker-build docker-run
+.PHONY: help install run build preview format translate doctor clean test podman-build podman-run
 PORT ?= 4333
 PM ?= pnpm
 RUN = $(PM) run
@@ -29,9 +29,6 @@ run: ## Start Vite dev server.
 build: ## Build for production.
 	@$(RUN) build
 
-lint: ## Run linter.
-	@$(RUN) lint
-
 format: ## Run formatter.
 	@$(RUN) format
 
@@ -50,11 +47,11 @@ clean: ## Cleaning the app
 test: ## Run Playwright tests.
 	@$(RUN) test
 
-docker-build: ## Build production Docker image.
-	@if docker image inspect tunbite:slim >/dev/null 2>&1; then docker rmi -f tunbite:slim; fi
-	@if docker image inspect tunbite:full >/dev/null 2>&1; then docker rmi -f tunbite:full; fi
-	@docker build -t tunbite:slim --target runtime-slim .
-	@docker build -t tunbite:full --target runtime-full .
+podman-build: ## Build production Podman image.
+	@if podman image inspect tunbite:slim >/dev/null 2>&1; then podman rmi -f tunbite:slim; fi
+	@if podman image inspect tunbite:full >/dev/null 2>&1; then podman rmi -f tunbite:full; fi
+	@podman build -t tunbite:slim --target runtime-slim .
+	@podman build -t tunbite:full --target runtime-full .
 
-docker-run: ## Run production Docker image.
-	@docker run --rm -p 4334:3000 tunbite:slim
+podman-run: ## Run production Podman image.
+	@podman run --rm -p 4334:3000 tunbite:slim

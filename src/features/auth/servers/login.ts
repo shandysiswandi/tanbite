@@ -13,10 +13,10 @@ import { API_URL } from "@/libraries/constants/api-url";
 
 interface ResponseBody {
   access_token?: string;
-  refresh_token?: string;
-  mfa_required?: boolean;
-  challenge_token?: string;
   available_methods?: string[];
+  challenge_token?: string;
+  mfa_required?: boolean;
+  refresh_token?: string;
 }
 
 interface RequestBody {

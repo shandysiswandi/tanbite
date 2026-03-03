@@ -21,72 +21,70 @@ export const Route = createFileRoute("/console/me/settings/connections")({
         "Review and manage third-party services linked to your account.",
     }),
   }),
-  component: () => {
-    return (
-      <PageBase
-        subtitle="Review and manage third-party services linked to your account."
-        title="Connection settings"
-      >
-        <Card>
-          <CardHeader>
-            <CardTitle>Connected services</CardTitle>
-            <CardDescription>
-              Revoke access anytime to keep your account secure.
-            </CardDescription>
-          </CardHeader>
+  component: () => (
+    <PageBase
+      subtitle="Review and manage third-party services linked to your account."
+      title="Connection settings"
+    >
+      <Card>
+        <CardHeader>
+          <CardTitle>Connected services</CardTitle>
+          <CardDescription>
+            Revoke access anytime to keep your account secure.
+          </CardDescription>
+        </CardHeader>
 
-          <CardContent className="space-y-4">
-            <div className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="font-medium text-sm">Google Workspace</p>
-                <p className="text-muted-foreground text-xs">
-                  Used for single sign-on and calendar sync.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Badge>Connected</Badge>
-                <Button size="sm" type="button" variant="outline">
-                  Manage
-                </Button>
-              </div>
+        <CardContent className="space-y-4">
+          <div className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-medium text-sm">Google Workspace</p>
+              <p className="text-muted-foreground text-xs">
+                Used for single sign-on and calendar sync.
+              </p>
             </div>
-
-            <Separator />
-
-            <div className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="font-medium text-sm">Slack</p>
-                <p className="text-muted-foreground text-xs">
-                  Receive workspace alerts directly in your Slack channels.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Badge variant="outline">Not connected</Badge>
-                <Button size="sm" type="button">
-                  Connect
-                </Button>
-              </div>
+            <div className="flex items-center gap-2">
+              <Badge>Connected</Badge>
+              <Button size="sm" type="button" variant="outline">
+                Manage
+              </Button>
             </div>
+          </div>
 
-            <Separator />
+          <Separator />
 
-            <div className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="font-medium text-sm">GitHub</p>
-                <p className="text-muted-foreground text-xs">
-                  Link repositories to trigger deployment workflows.
-                </p>
-              </div>
-              <div className="flex items-center gap-2">
-                <Badge>Connected</Badge>
-                <Button size="sm" type="button" variant="outline">
-                  Disconnect
-                </Button>
-              </div>
+          <div className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-medium text-sm">Slack</p>
+              <p className="text-muted-foreground text-xs">
+                Receive workspace alerts directly in your Slack channels.
+              </p>
             </div>
-          </CardContent>
-        </Card>
-      </PageBase>
-    );
-  },
+            <div className="flex items-center gap-2">
+              <Badge variant="outline">Not connected</Badge>
+              <Button size="sm" type="button">
+                Connect
+              </Button>
+            </div>
+          </div>
+
+          <Separator />
+
+          <div className="flex flex-col gap-4 rounded-lg border p-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="font-medium text-sm">GitHub</p>
+              <p className="text-muted-foreground text-xs">
+                Link repositories to trigger deployment workflows.
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <Badge>Connected</Badge>
+              <Button size="sm" type="button" variant="outline">
+                Disconnect
+              </Button>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </PageBase>
+  ),
 });

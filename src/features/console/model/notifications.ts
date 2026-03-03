@@ -1,8 +1,8 @@
 export interface Notification {
-  id: string;
-  title: string;
-  message: string;
   category: string;
-  time: string;
+  id: string;
+  message: string;
   status: "read" | "unread";
+  time: string;
+  title: string;
 }

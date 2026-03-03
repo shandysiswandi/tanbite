@@ -5,8 +5,8 @@ import { apiPost } from "@/libraries/client/api";
 import { API_URL } from "@/libraries/constants/api-url";
 
 interface RequestBody {
-  email: string;
   captcha: string;
+  email: string;
 }
 
 export const forgotPasswordFn = createServerFn({ method: "POST" })

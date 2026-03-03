@@ -3,19 +3,19 @@ import { APP } from "@/libraries/constants/app";
 import { getLocale } from "@/libraries/paraglide/runtime";
 
 interface SeoProps {
-  path: string;
-  title: string;
   description: string;
-
-  type?: "website" | "article" | "profile" | "product ";
   image?: string;
   imageAlt?: string;
-  noIndex?: boolean;
 
   keywords?: string;
+  noIndex?: boolean;
+  path: string;
   siteName?: string;
   themeColor?: string;
+  title: string;
   twitterHandle?: string;
+
+  type?: "website" | "article" | "profile" | "product ";
 }
 
 export function seo(props: SeoProps): AnyRouteMatch["meta"] {

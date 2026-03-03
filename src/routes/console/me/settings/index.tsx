@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Camera, Save } from "lucide-react";
+import { Save } from "lucide-react";
+import { useState } from "react";
+import { FileDropzone } from "@/components/file-dropzone";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,6 +30,7 @@ export const Route = createFileRoute("/console/me/settings/")({
   }),
   component: () => {
     const { profile, isProfileLoading } = useProfile();
+    const [selectedPhoto, setSelectedPhoto] = useState<File | null>(null);
 
     return (
       <PageBase
@@ -65,21 +68,34 @@ export const Route = createFileRoute("/console/me/settings/")({
                   <AvatarImage alt="Profile" src={profile?.avatar} />
                   <AvatarFallback>U</AvatarFallback>
                 </Avatar>
-                <div className="space-y-1">
+                <div className="min-w-0 flex-1 space-y-1">
                   <p className="font-medium text-sm">Profile photo</p>
                   <p className="text-muted-foreground text-xs">
                     JPG or PNG, up to 2MB.
                   </p>
                 </div>
-                <Button
-                  className="ml-auto"
-                  size="sm"
-                  type="button"
-                  variant="outline"
-                >
-                  <Camera />
-                  Change photo
-                </Button>
+
+                <div className="w-full md:ml-auto md:max-w-sm">
+                  <FileDropzone
+                    accept={{
+                      "image/jpeg": [".jpg", ".jpeg"],
+                      "image/png": [".png"],
+                    }}
+                    description="Drag and drop your profile photo, or browse from your device."
+                    maxFiles={1}
+                    onFilesSelected={(acceptedFiles) => {
+                      const [firstAcceptedFile] = acceptedFiles;
+                      setSelectedPhoto(firstAcceptedFile ?? null);
+                    }}
+                    subTitle="Only 1 file allowed. JPG or PNG, up to 2MB."
+                    title="Upload photo"
+                  />
+                  {selectedPhoto && (
+                    <p className="mt-2 text-muted-foreground text-xs">
+                      Selected: {selectedPhoto.name}
+                    </p>
+                  )}
+                </div>
               </div>
 
               <form

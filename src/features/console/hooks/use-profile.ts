@@ -2,11 +2,11 @@ import { createContext, useContext } from "react";
 import type { Profile } from "../model/profile";
 
 interface ProfileContextValue {
-  profile?: Profile;
-  isProfileLoading: boolean;
-  isProfileError: boolean;
   isLoggingOut: boolean;
+  isProfileError: boolean;
+  isProfileLoading: boolean;
   onLogout: () => void;
+  profile?: Profile;
 }
 
 export const ProfileContext = createContext<ProfileContextValue | null>(null);

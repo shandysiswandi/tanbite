@@ -1,14 +1,14 @@
 import type { Meta } from "@/libraries/types/meta";
 
 export interface ApiEnvelope<TData> {
-  message: string;
   data: TData;
+  message: string;
   meta?: Meta;
 }
 
 export interface ApiErrorResponse {
-  message: string;
   error?: Record<string, string>;
+  message: string;
 }
 
 export type QueryValue =

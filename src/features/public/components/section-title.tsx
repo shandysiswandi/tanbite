@@ -3,10 +3,10 @@ import { Badge } from "@/components/ui/badge";
 import { cn } from "@/libraries/utils/tailwind";
 
 interface SectionTitleProps {
-  title?: string;
-  heading?: string;
-  description?: string;
   align?: "left" | "center";
+  description?: string;
+  heading?: string;
+  title?: string;
 }
 
 export function SectionTitle({

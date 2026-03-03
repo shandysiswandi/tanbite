@@ -8,15 +8,13 @@ import { m } from "@/libraries/paraglide/messages";
 import { seo } from "@/libraries/utils/seo";
 
 export const Route = createFileRoute("/_auth/login")({
-  head: () => {
-    return {
-      meta: seo({
-        path: "/login",
-        title: m["login.title"](),
-        description: m["login.description"](),
-      }),
-    };
-  },
+  head: () => ({
+    meta: seo({
+      path: "/login",
+      title: m["login.title"](),
+      description: m["login.description"](),
+    }),
+  }),
   component: () => {
     const { form, onSubmitDefault } = useLogin();
 

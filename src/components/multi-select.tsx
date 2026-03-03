@@ -17,15 +17,15 @@ import {
 import { cn } from "@/libraries/utils/tailwind";
 
 export interface MultiSelectOption {
+  disabled?: boolean;
   label: string;
   value: string;
-  disabled?: boolean;
 }
 
 interface MultiSelectProps {
-  id: string;
   className?: string;
   emptyMessage?: string;
+  id: string;
   name?: string;
   onValueChange: (value: string[]) => void;
   options: readonly MultiSelectOption[];

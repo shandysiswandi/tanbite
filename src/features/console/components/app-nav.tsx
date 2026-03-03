@@ -93,6 +93,7 @@ export function AppNav({ items, label }: { label?: string; items: NavItem[] }) {
 
   if (isProfileLoading) {
     const placeholderCount = Math.min(items.length, 3);
+    const placeholderItems = items.slice(0, placeholderCount);
 
     return (
       <SidebarGroup>
@@ -102,18 +103,24 @@ export function AppNav({ items, label }: { label?: string; items: NavItem[] }) {
           </SidebarGroupLabel>
         )}
         <SidebarMenu>
-          {Array.from({ length: placeholderCount }).map((_, index) => (
-            <SidebarMenuItem
-              key={`placeholder-${label ?? "overview"}-${index + 1}`}
-            >
-              <SidebarMenuButton disabled>
-                <Skeleton className="size-4 rounded-sm" />
-                <Skeleton
-                  className={index % 2 === 0 ? "h-4 w-20" : "h-4 w-24"}
-                />
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-          ))}
+          {placeholderItems.map((item) => {
+            const placeholderKey = isNavGroup(item)
+              ? `placeholder-${label ?? "overview"}-group-${item.title}`
+              : `placeholder-${label ?? "overview"}-${item.title}-${item.to}`;
+
+            return (
+              <SidebarMenuItem key={placeholderKey}>
+                <SidebarMenuButton disabled>
+                  <Skeleton className="size-4 rounded-sm" />
+                  <Skeleton
+                    className={
+                      placeholderKey.length % 2 === 0 ? "h-4 w-20" : "h-4 w-24"
+                    }
+                  />
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            );
+          })}
         </SidebarMenu>
       </SidebarGroup>
     );

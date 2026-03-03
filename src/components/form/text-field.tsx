@@ -10,8 +10,8 @@ import { Input } from "@/components/ui/input";
 import { useFieldContext } from "./use-form";
 
 interface TextFieldProps extends ComponentProps<"input"> {
-  label: string;
   description?: string;
+  label: string;
 }
 
 export default function TextField({

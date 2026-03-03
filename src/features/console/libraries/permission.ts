@@ -28,11 +28,11 @@ export const hasPermission = (
 };
 
 interface RequirePermissionInput {
-  queryClient: QueryClient;
-  permission: string;
   action?: string;
-  locationHref: string;
   fallbackTo?: string;
+  locationHref: string;
+  permission: string;
+  queryClient: QueryClient;
 }
 
 export const requirePermission = async ({

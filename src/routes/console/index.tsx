@@ -31,17 +31,15 @@ export const Route = createFileRoute("/console/")({
         "Track revenue, customer growth, account activity, and performance trends in one place.",
     }),
   }),
-  component: () => {
-    return (
-      <PageBase
-        subtitle="Track revenue, customer growth, account activity, and performance trends in one place."
-        title="Dashboard overview"
-      >
-        <DashboardCards />
-        <ChartAreaInteractive />
-      </PageBase>
-    );
-  },
+  component: () => (
+    <PageBase
+      subtitle="Track revenue, customer growth, account activity, and performance trends in one place."
+      title="Dashboard overview"
+    >
+      <DashboardCards />
+      <ChartAreaInteractive />
+    </PageBase>
+  ),
 });
 
 const chartConfig = {
@@ -56,9 +54,9 @@ const chartConfig = {
 } satisfies ChartConfig;
 
 interface RevenueChartDataPoint {
+  customers: number;
   date: string;
   revenue: number;
-  customers: number;
 }
 
 const chartData: RevenueChartDataPoint[] = [

@@ -19,11 +19,11 @@ import {
 import { cn } from "@/libraries/utils/tailwind";
 
 interface NotificationItem {
-  id: string;
-  title: string;
   description: string;
-  time: string;
+  id: string;
   read: boolean;
+  time: string;
+  title: string;
 }
 
 const initialNotifications: NotificationItem[] = [

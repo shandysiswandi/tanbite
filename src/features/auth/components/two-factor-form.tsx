@@ -8,13 +8,13 @@ import { useTwoFactor } from "../hooks/use-two-factor";
 import { FormLayout } from "./form-layout";
 
 interface TextCopy {
-  title: string;
-  label: string;
-  placeholder: string;
   description: string;
+  label: string;
   nextText: string;
   nextTitle: string;
   nextTo: string;
+  placeholder: string;
+  title: string;
 }
 
 const getTextCopyBasedMethod = (): Record<VerifyMethod, TextCopy> =>

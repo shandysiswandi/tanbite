@@ -152,7 +152,7 @@ const StatusCard = ({
 
   useEffect(() => {
     if (cooldownSeconds <= 0) {
-      return undefined;
+      return;
     }
 
     const interval = setInterval(() => {

@@ -1,8 +1,8 @@
 @layer base {
   /* Scrollbars: Firefox */
   * {
-    scrollbar-width: thin;
     scrollbar-color: var(--muted-foreground) var(--background);
+    scrollbar-width: thin;
   }
 
   /* Scrollbars: Chrome / Edge / Safari */
@@ -17,8 +17,8 @@
 
   *::-webkit-scrollbar-thumb {
     background: var(--muted-foreground);
-    border-radius: 999px;
     border: 2px solid var(--background);
+    border-radius: 999px;
   }
 
   *::-webkit-scrollbar-thumb:hover {

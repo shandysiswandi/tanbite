@@ -26,13 +26,11 @@ export const Route = createFileRoute("/console")({
     }),
   }),
   notFoundComponent: AppNotFound,
-  component: () => {
-    return (
-      <ProfileProvider>
-        <AppearanceProvider>
-          <AppLayout />
-        </AppearanceProvider>
-      </ProfileProvider>
-    );
-  },
+  component: () => (
+    <ProfileProvider>
+      <AppearanceProvider>
+        <AppLayout />
+      </AppearanceProvider>
+    </ProfileProvider>
+  ),
 });

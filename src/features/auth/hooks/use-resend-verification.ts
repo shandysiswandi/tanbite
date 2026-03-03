@@ -2,8 +2,8 @@ import { useMutation } from "@tanstack/react-query";
 import { toast } from "sonner";
 import { resendVerificationFn } from "../servers/resend-verification";
 
-export const useResendVerification = () => {
-  return useMutation({
+export const useResendVerification = () =>
+  useMutation({
     mutationFn: resendVerificationFn,
     onSuccess: () => {
       toast.success("Verification email sent.");
@@ -12,4 +12,3 @@ export const useResendVerification = () => {
       toast.error(error.message);
     },
   });
-};

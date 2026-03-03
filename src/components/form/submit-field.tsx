@@ -5,9 +5,9 @@ import { Field } from "@/components/ui/field";
 import { useFormContext } from "./use-form";
 
 interface SubmitFieldProps extends Omit<ComponentProps<"button">, "type"> {
+  children?: ReactNode;
   idleText: string;
   pendingText: string;
-  children?: ReactNode;
 }
 
 export default function SubmitButton({

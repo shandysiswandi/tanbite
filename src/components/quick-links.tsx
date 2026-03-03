@@ -47,35 +47,33 @@ const quickLinks: Array<{
   },
 ];
 
-export const QuickLinks = () => {
-  return (
-    <Card className="fade-in-0 slide-in-from-bottom-50 animate-in duration-700">
-      <CardHeader>
-        <CardTitle className="text-muted-foreground text-xs uppercase tracking-widest">
-          {m["quick_links.label"]()}
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-2">
-        {quickLinks.map(({ key, to, icon: Icon, title, description }) => (
-          <Link
-            className="group flex items-start gap-3 rounded-xl border border-border/60 bg-background/70 p-4 transition hover:border-border hover:bg-accent/40"
-            key={key}
-            to={to}
-            viewTransition
-          >
-            <span className="flex size-10 items-center justify-center rounded-lg bg-muted text-foreground">
-              <Icon className="size-5" />
-            </span>
-            <div className="flex-1 space-y-1">
-              <p className="font-medium text-sm">{title}</p>
-              <p className="text-muted-foreground text-sm">{description}</p>
-            </div>
-            <span className="mt-1 flex size-8 items-center justify-center rounded-full border border-transparent text-muted-foreground transition group-hover:border-border group-hover:text-foreground">
-              <ArrowUpRight className="size-4" />
-            </span>
-          </Link>
-        ))}
-      </CardContent>
-    </Card>
-  );
-};
+export const QuickLinks = () => (
+  <Card className="fade-in-0 slide-in-from-bottom-50 animate-in duration-700">
+    <CardHeader>
+      <CardTitle className="text-muted-foreground text-xs uppercase tracking-widest">
+        {m["quick_links.label"]()}
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="space-y-2">
+      {quickLinks.map(({ key, to, icon: Icon, title, description }) => (
+        <Link
+          className="group flex items-start gap-3 rounded-xl border border-border/60 bg-background/70 p-4 transition hover:border-border hover:bg-accent/40"
+          key={key}
+          to={to}
+          viewTransition
+        >
+          <span className="flex size-10 items-center justify-center rounded-lg bg-muted text-foreground">
+            <Icon className="size-5" />
+          </span>
+          <div className="flex-1 space-y-1">
+            <p className="font-medium text-sm">{title}</p>
+            <p className="text-muted-foreground text-sm">{description}</p>
+          </div>
+          <span className="mt-1 flex size-8 items-center justify-center rounded-full border border-transparent text-muted-foreground transition group-hover:border-border group-hover:text-foreground">
+            <ArrowUpRight className="size-4" />
+          </span>
+        </Link>
+      ))}
+    </CardContent>
+  </Card>
+);
